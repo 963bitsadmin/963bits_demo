@@ -59,4 +59,4 @@ jobs:
             docker rm $(docker ps -q -f status=exited)
             docker rmi -f $(docker images -aq)
             docker pull 963bits/demo:latest
-            docker run -d -p 8000:8000 963bits/demo:latest
+            docker run -d -p 8080:80 963bits/demo:latest
