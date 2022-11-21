@@ -20,6 +20,5 @@ jobs:
               NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
               NETLIFY_SITE_ID: ${{ secrets.NETLIFY_ID }}
           run:
-            yarn
-            yarn build
+            npm run build
             npx netlify-cli deploy --dir=public --prod
