@@ -20,6 +20,8 @@ jobs:
               NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
               NETLIFY_SITE_ID: ${{ secrets.NETLIFY_ID }}
           run:
-            npm run build
-            npm install netlify-cli -g
+            sudo apt -y install vite &&
+            npm i && 
+            npm run build &&
+            npm install netlify-cli &&
             netlify deploy
