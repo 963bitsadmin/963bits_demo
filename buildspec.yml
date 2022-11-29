@@ -13,6 +13,8 @@ phases:
       - npm install
   build:
     commands:
+      - echo Listar....
+      - ls 
       - echo Building....
       - npm run build
   post_build:
