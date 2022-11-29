@@ -3,21 +3,27 @@ version: 0.2
 phases:
   install:
     commands:
+      - echo Listar 1....
+      - ls 
       - echo Installing Node 19...
       - curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
       - sudo apt-get install -y nodejs
       - npm i npm@latest -g
   pre_build:
     commands:
+      - echo Listar 2....
+      - ls 
       - echo Installing dependencies...
       - npm install
   build:
     commands:
-      - echo Listar....
+      - echo Listar 3....
       - ls 
       - echo Building....
       - npm run build
   post_build:
     commands:
+      - echo Listar 4....
+      - ls 
       - echo PostBuild Phase
       - aws s3 sync ./dist $S3_BUCKET
