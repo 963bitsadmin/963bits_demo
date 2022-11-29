@@ -12,7 +12,7 @@ phases:
       - npm install
   build:
     commands:
-      - echo Building...
+      - echo Building....
       - npm run build
 artifacts:
   files:
