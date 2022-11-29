@@ -6,6 +6,7 @@ phases:
       - echo Installing Node 19...
       - curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
       - sudo apt-get install -y nodejs
+      - npm i npm@latest -g
   pre_build:
     commands:
       - echo Installing dependencies...
@@ -14,8 +15,7 @@ phases:
     commands:
       - echo Building....
       - npm run build
-artifacts:
-  files:
-    - "**/*"
-  discard-paths: no
-  base-directory: dist
+  post_build:
+    commands:
+      - echo PostBuild Phase
+      - aws s3 sync ./dist $S3_BUCKET
