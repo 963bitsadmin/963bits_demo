@@ -9,7 +9,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'pwd && docker build -f Dockerfile -t marvel .'
+        sh 'docker build -f Dockerfile -t marvel .'
       }
     }
 
