@@ -19,7 +19,7 @@ export const Navbar = () => {
                 className="navbar-brand" 
                 to="/"
             >
-                385Bits
+                963 Bits
             </Link>
 
             <div className="navbar-collapse">
