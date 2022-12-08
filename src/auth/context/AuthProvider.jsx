@@ -13,7 +13,7 @@ const initialState = {
 
 export const AuthProvider = ({ children }) => {
   
-  const [ authState, dispatch] = useReducer(authReducer, initialState);
+  const [ authState, dispatch] = useReducer(AuthReducer, initialState);
 
   const login = ( name = '' ) => {
 
