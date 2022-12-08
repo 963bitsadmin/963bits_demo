@@ -9,7 +9,7 @@ pipeline {
 
     stage('PreBuild') {
       steps {
-        sh 'cd demo_development && npm i '
+        sh 'ls -ltrh'
       }
     }
 
