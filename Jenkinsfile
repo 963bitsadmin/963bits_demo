@@ -7,9 +7,9 @@ pipeline {
       }
     }
 
-    stage('PreBuild') {
+    stage('Build') {
       steps {
-        sh 'npm i && ls -ltrh'
+        sh 'docker build -f Dockerfile -t marvel:latest'
       }
     }
 
