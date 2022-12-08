@@ -7,20 +7,9 @@ pipeline {
       }
     }
 
-    stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            sh 'docker build -f Dockerfile -t marvel .'
-          }
-        }
-
-        stage('stage2') {
-          steps {
-            sh 'ls -ltrh'
-          }
-        }
-
+    stage('Stop/Remove Docker') {
+      steps {
+        sh 'docker stop marvel && docker rm marvel'
       }
     }
 
