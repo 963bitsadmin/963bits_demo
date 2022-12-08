@@ -8,8 +8,19 @@ pipeline {
     }
 
     stage('Build') {
-      steps {
-        sh 'docker build -f Dockerfile -t marvel .'
+      parallel {
+        stage('Build') {
+          steps {
+            sh 'docker build -f Dockerfile -t marvel .'
+          }
+        }
+
+        stage('stage2') {
+          steps {
+            sh 'ls -ltrh'
+          }
+        }
+
       }
     }
 
