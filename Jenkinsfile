@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('Docker RMI') {
+      steps {
+        sh 'docker rmi marvel'
+      }
+    }
+
   }
 }
